@@ -1,22 +1,22 @@
 public class Menu {
+    // 1. DEKLARASI ATRIBUT (Variabel Class)
+    // Menggunakan tipe data String dan double. 
+    // Menggunakan keyword 'private' untuk keamanan data (Encapsulation).
     private String namaMenu;
     private double harga;
     private String kategori;
 
-    public static void main(String[] args) {
-        // Contoh penggunaan class menu
-        Menu item = new Menu("Dimsum Original", 21000, "Makanan");
-        System.out.println(item.getNamaMenu());
-    }
-
-    // Pembuatan objek menu
+    // 2. CONSTRUCTOR
+    // Method khusus untuk mencetak/membuat objek menu baru
     public Menu(String namaMenu, double harga, String kategori) {
+        // Keyword 'this' digunakan untuk membedakan atribut class dengan parameter
         this.namaMenu = namaMenu;
         this.harga = harga;
         this.kategori = kategori;
     }
 
-    // Akses keluar
+    // 3. GETTER METHODS
+    // Karena atribut di atas 'private', kita butuh method 'public' untuk mengambil nilainya
     public String getNamaMenu() {
         return namaMenu;
     }
@@ -27,5 +27,11 @@ public class Menu {
 
     public String getKategori() {
         return kategori;
+    }
+
+    // 4. SETTER METHOD (Fitur Baru untuk Admin)
+    // Method ini mengizinkan Admin untuk mengubah/menimpa (overwrite) harga menu yang sudah ada
+    public void setHarga(double harga) {
+        this.harga = harga;
     }
 }
